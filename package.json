@@ -1,0 +1,39 @@
+{
+  "name": "drop-subquery-test",
+  "version": "0.0.1",
+  "description": "None",
+  "main": "dist/index.js",
+  "scripts": {
+    "build": "subql codegen && subql build",
+    "codegen": "subql codegen",
+    "start:docker": "docker-compose pull && docker-compose up --remove-orphans",
+    "dev": "subql codegen && subql build && docker-compose pull && docker-compose up --remove-orphans",
+    "prepack": "rm -rf dist && npm run build",
+    "test": "jest",
+    "build:develop": "NODE_ENV=develop subql codegen && NODE_ENV=develop subql build"
+  },
+  "homepage": "https://github.com/subquery/cosmos-subql-starter",
+  "repository": "github:subquery/cosmos-subql-starter",
+  "files": [
+    "dist",
+    "schema.graphql",
+    "project.yaml"
+  ],
+  "author": "None",
+  "license": "MIT",
+  "devDependencies": {
+    "@cosmjs/stargate": "0.32.4",
+    "@subql/cli": "5.2.3",
+    "@subql/node-cosmos": "latest",
+    "@subql/testing": "latest",
+    "typescript": "^5.2.2",
+    "dotenv": "latest"
+  },
+  "dependencies": {
+    "@subql/types-cosmos": "latest",
+    "@types/node": "^17.0.21",
+    "pino": "^7.8.0",
+    "ts-proto": "^1.112.1",
+    "tslib": "^2.3.1"
+  }
+}
