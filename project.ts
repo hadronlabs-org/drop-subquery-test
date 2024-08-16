@@ -46,15 +46,6 @@ const project: CosmosProject = {
      * These settings can be found in your docker-compose.yaml, they will slow indexing but prevent your project being rate limited
      */
     endpoint: process.env.ENDPOINT!?.split(',') as string[] | string,
-    chaintypes: new Map([
-      [
-        "cosmwasm.wasm.v1",
-        {
-          file: "./proto/cosmos/slashing/v1beta1/tx.proto",
-          messages: ["MsgExecuteContract"],
-        },
-      ]
-    ]),
   },
   dataSources: [
     {
